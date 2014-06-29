@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+}
+
+     @section Title
+{
+  <title>Home index page</title>   
+}
+
+@section header
+{
+     <a href="/Admin/login">Admin Login</a> | <a href="/Account/signup">Signup</a> 
+    | <a href="/Account/Addadmin"> Admin signup</a> | <a href="/Account/login">Log In</a></p>
+            <p>
+@*           	Shopping Cart: <strong> items</strong> ( <a href="/Cart/shoppingcart">Show Cart</a> )*@
+		</p>
+    }
+@section Menu
+{
+       <ul>
+@*                <li><a href="/Home/GoHome" class="selected">Home</a></li>*@
+                <li><a href="/Home/viewallproducts">Products</a></li>
+                <li><a href="/Home/about">About</a></li>
+@*                <li><a href="/Cart/checkout">Checkout</a></li>*@
+                <li><a href="/Home/contact">Contact Us</a></li>
+           
+          </ul>
+    }
+@section Search
+{
+    <ul>
+    <li><a href="/Home/search" class="selected">Search</a></li>
+        </ul>
+    }
+@section Sidebar
+{
+    <li class="first">Primary Office</li>
+                        <li> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></li>
+                        <li>Phone: 010-010-6600</li>
+@*                        <li><a href="/Cart/shoppingcart">View Cart</a></li>*@
+                        <li><a href="/Home/contact">Contact Us</a></li>
+    }
+@section BottomSidebar
+{
+                <h3>Famous Footwear </h3>   
+                <div class="content"> 
+                	<div class="bs_box">
+                    	<a href="#"><img src="~/images/02.jpg" alt="image" /></a>
+                        <h4><a href="/Home/viewallproducts">Products</a></h4>
+                       <div class="cleaner"></div>
+                    </div>
+                    </div>
+    
+    }
+@section Slider
+{
+    <div id="slider" class="nivoSlider">
+                 <img src="~/images/slider/02.jpg" alt="" />
+                    <a href="#"><img src="~/images/slider/01.jpg" alt=""  /></a>
+                    <img src="~/images/slider/03.jpg" alt=""  />
+                </div>
+    }
+@section Products
+{
+    @*@Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts",required:false)*@
+    }
+
+@section Footer
+{
+   <p> <a href="/Home/viewallproducts">Products</a> | <a href="/Home/about">About</a>  |  <a href="/Home/contact">Contact Us</a>
+		</p>
+    }
