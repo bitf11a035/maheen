@@ -1,0 +1,36 @@
+﻿@model maheen.Models.product
+@{
+    ViewBag.Title = "Update";
+}
+
+<form action="/Admin/Update1" method="post">
+<div id="content" class="float_r">
+        	
+            
+            <div class="content_half float_l checkout">
+		<img src="~/Uploads/images/@ViewBag.X.imagepath" alt="" width="20%" height="20%"/><br />
+                <br />
+             	 Product ID :  
+                  <input type="text"  name="id" value="@ViewBag.X.PId" style="width:300px;" readonly="true"  />
+                <br />
+                <br />
+                Product Name :  
+                  <input type="text"  name="productname" value="@ViewBag.X.productname" style="width:300px;"  />
+                <br />
+                <br />
+              Product price:
+                <input type="text"  name="price" value="@ViewBag.X.price" style="width:300px;"  />
+                <br />
+                <br />
+
+                Product Qyantity:
+                <input type="text"  name="quantity" value="@ViewBag.X.quantity" style="width:300px;"  />
+                <br />
+                <br />
+              
+           <input type="submit" class="submit_btn" name="submit" id="submit" value="Update" />
+                       
+                 
+
+            </div>
+       </form>

@@ -1,0 +1,110 @@
+﻿@model List< maheen.Models.product>
+@{
+    ViewBag.Title = "vieworder";
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+}
+
+
+@section Title
+{
+  <title>View page</title>   
+}
+
+@section header
+{
+    <a href="/Account/logout">Logout</a> 
+      @*<a href="/Cart/shoppingcart">My Cart</a> 
+            <p>
+            	Shopping Cart: <strong> items</strong> ( <a href="/Cart/shoppingcart">Show Cart</a> )
+		</p>*@
+    }
+@section Menu
+{
+       <ul>
+                <li><a href="/Home/GoHome" class="selected">Home</a></li>
+                <li><a href="/Home/viewallproducts">Products</a></li>
+                <li><a href="/Home/about">About</a></li>
+                <li><a href="/Home/contact">Contact Us</a></li>
+           
+          </ul>
+    }
+@section Search
+{
+    <ul>
+    <li><a href="/Home/search" class="selected">Search</a></li>
+        </ul>
+    }
+@section Sidebar
+{
+    <li class="first">Primary Office</li>
+                        <li> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></li>
+                        <li>Phone: 010-010-6600</li>
+@*                        <li><a href="/Cart/shoppingcart">View Cart</a></li>*@
+                        <li><a href="/Home/contact">Contact Us</a></li>
+    }
+@section BottomSidebar
+{
+                <h3>Famous Footwear </h3>   
+                <div class="content"> 
+                	<div class="bs_box">
+                    	<a href="#"><img src="~/images/02.jpg" alt="image" /></a>
+                        <h4><a href="/Home/viewallproducts">Products</a></h4>
+                       <div class="cleaner"></div>
+                    </div>
+                    </div>
+    
+    }
+@section Slider
+{
+        @if(Model!=null)
+{
+ foreach(var x in Model)
+ {
+			<div class="body">
+				<div id="content">
+
+					<div>
+						<ul>
+							<li>
+                                
+								<img src="~/images/@x.imagepath" alt="Image" width="130" height="150" />
+                                    
+								    <div class="extra-wrap" >
+                                            	<h3>@x.productname</h3>
+                                                <p class="p1">Quantity: @x.quantity</p>
+                                                <p class="p1">Price: Rs: @x.price</p>
+                                                
+
+                                                
+                                                    
+                                                    @using (Html.BeginForm("DeleteItem", "Home",FormMethod.Post))
+                                                    {
+                                                        @Html.Hidden("id", @x.PId);
+                                                        <button type=" submit" >Remove</button>
+                                                    }
+
+                                                     
+                                                 
+                                            </div>
+
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+                                }
+                                }
+    }
+@section Products
+{
+    @*@Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts",required:false)*@
+    }
+
+@section Footer
+{
+@*   <p><a href="/Home/GoHome">Home</a> | <a href="/Home/viewallproducts">Products</a> | <a href="/Home/about">About</a>  | <a href="/Cart/checkout">Checkout</a> | <a href="/Home/contact">Contact Us</a>
+		</p>*@
+    }
+ 
+

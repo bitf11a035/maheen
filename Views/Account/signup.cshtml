@@ -1,0 +1,86 @@
+﻿@model maheen.Models.customer
+@{
+    ViewBag.Title = "signup";
+    Layout = "~/Views/Shared/_Layoutadmin.cshtml";
+}    
+   
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">  
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+
+<script>
+    $(function () {
+        $("#calendar").datepicker();
+    });
+</script>
+
+    @using (Html.BeginForm("signupcheck", "Account", FormMethod.Post))
+    {
+                          <div class="content_half float_l">
+                <div id="signup_form">
+         @Html.ValidationSummary(true)
+       <br />
+         <table>
+             <tr>
+           
+   <td>@Html.LabelFor(model => model.username)  </td>
+   <td>@Html.TextBoxFor(model => model.username, new { id="username" })</td>
+   <td>@Html.ValidationMessageFor(model=>model.username)</td>
+
+       </tr>
+            
+   <tr>
+                 <td>@Html.LabelFor(model => model.email)</td>
+      <td>@Html.TextBoxFor(model => model.email,new { id = "email",name="email" })</td>
+      <td>@Html.ValidationMessageFor(model=>model.email)</td>
+        </tr>
+             <tr>
+                 <td>@Html.LabelFor(model => model.password)</td>
+        <td>@Html.PasswordFor(model => model.password,new { id = "password",name="password" })</td>
+              <td>@Html.ValidationMessageFor(model=>model.password)</td></tr>
+  <tr>
+                 <td>@Html.LabelFor(model => model.address)</td>
+      <td>@Html.TextBoxFor(model => model.address,new { id = "address",name="address" })</td>
+       <td>@Html.ValidationMessageFor(model=>model.address)</td>
+
+  </tr>
+    <tr>
+                 <td>@Html.LabelFor(model => model.phonenumber)</td>
+        <td>@Html.TextBoxFor(model => model.phonenumber,new { id="phonenumber",name="phonenumber" })</td>
+         <td>@Html.ValidationMessageFor(model=>model.phonenumber)</td>
+    </tr>
+     
+           
+    <tr>
+                 <td>@Html.LabelFor(model => model.gender)</td>
+        <td><select name="gender_select" id="gender_select">
+                   <option ></option>
+                   <option id="male_option">Male</option>
+                   <option id="female_option">Female</option>
+                  
+              </select></td>  <td>@Html.ValidationMessageFor(model=>model.gender)</td>
+
+    </tr>
+   <tr>
+                 <td> Date Of Birth:</td>
+       <td>@Html.TextBoxFor(model => model.dob,new { id = "dob",name="dob" })</td>  
+       <td>@Html.ValidationMessageFor(model=>model.dob)</td>
+
+   </tr>
+   <tr>
+                 <td><input type="submit" id="b2" value="Submit" /></td></tr>
+             </table>
+                    </div>
+                              </div>
+                               <div class="cleaner h50"></div>
+     }
+  
+      
+        <div class="cleaner"></div>
+ 
+
+       @section Scripts
+       {
+@Scripts.Render("~/bundles/jqueryval")
+}
+
+ 

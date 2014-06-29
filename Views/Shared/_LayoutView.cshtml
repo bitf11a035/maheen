@@ -1,0 +1,122 @@
+﻿@{
+    ViewBag.Title = "_LayoutView";
+}
+
+@*<h2>_LayoutView</h2>*@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+@RenderSection("Title", required: false)
+<meta name="keywords" content="shoes store, free template, ecommerce, online shop, website templates, CSS, HTML" />
+<meta name="description" content="Shoes Store is a free ecommerce template provided by templatemo.com" />
+<link href="~/Content/templatemo_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="~/Content/nivo-slider.css" type="text/css" media="screen" />
+
+<link rel="stylesheet" type="text/css" href="~/Content/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="~/Scripts/jquery.min.js"></script>
+<script type="text/javascript" src="~/Scripts/ddsmoothmenu.js">
+    
+/***********************************************
+* Smooth Navigational Menu- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
+* This notice MUST stay intact for legal use
+* Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+***********************************************/
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "top_nav", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+     @RenderSection("scripts", required: false) 
+</head>
+
+<body>
+
+<div id="templatemo_body_wrapper">
+<div id="templatemo_wrapper">
+
+	<div id="templatemo_header">
+    	<div id="site_title"><h1><a href="/Home/index">Online Shoes Store</a></h1></div>
+        <div id="header_right">
+        	<p>
+                @RenderSection("header", required: false)
+                </p>
+	    <p>
+			</p>
+		</div>
+        <div class="cleaner"></div>
+    </div> <!-- END of templatemo_header -->
+
+    <!------ Start of menubar------->
+    <div id="templatemo_menubar">
+    	<div id="top_nav" class="ddsmoothmenu">
+    @RenderSection("Menu", required: false)
+            <br style="clear: left" />
+        </div> <!-- end of ddsmoothmenu -->
+
+        <!-----Search---->
+        <div id="templatemo_search">
+            @RenderSection("Search", required: false)
+       </div>
+    </div> <!-- END of templatemo_menubar -->
+    
+    <!-----Side bar list----->
+    <div id="templatemo_main">
+    	<div id="sidebar" class="float_l">
+        	<div class="sidebar_box"><span class="bottom"></span>
+            	<h3>Online Shoe Store </h3>   
+                <div class="content"> 
+                	<ul class="sidebar_list">
+                        @RenderSection("Sidebar", required: false)
+     </ul>
+                </div>
+            </div>
+            <!----Bottom sidebar----->
+             <div class="sidebar_box"><span class="bottom"></span>
+                 @RenderSection("BottomSidebar", required: false)
+            </div>
+            </div>
+        <!----Slider---->
+        <div id="content" class="float_r">
+        	<div id="slider-wrapper">
+                 @RenderSection("Slider", required: false)
+                </div>
+
+            <script type="text/javascript" src="~/Scripts/jquery-1.4.3.min.js"></script>
+            <script type="text/javascript" src="~/Scripts/jquery.nivo.slider.pack.js"></script>
+            <script type="text/javascript">
+                $(window).load(function () {
+                    $('#slider').nivoSlider()
+                });
+            </script>
+
+            <!---------Products---->
+           
+            @RenderSection("Products", required: false)
+@*             @Scripts.Render("~/bundles/jquery")*@
+            </div> 
+            <div class="cleaner"></div>
+             </div> <!-- END of templatemo_main -->
+
+        <!----Footer---->
+        <div id="templatemo_footer">
+            @RenderSection("Footer", required: false)
+        </div> <!-- END of templatemo_footer -->
+
+</div> <!-- END of templatemo_wrapper -->
+</div> <!-- END of templatemo_body_wrapper -->
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+﻿@{ 
+    ViewBag.Title = "Add_Product";
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+    
+}
+ @section Title
+{
+  <title>View All Products</title>   
+}
+
+@section header
+{
+   <a href="/Account/logout">Logout</a>  
+    }
+@section Menu
+{
+      <ul>
+@*                <li><a href="/Admin/index" class="selected">Home</a></li>*@
+                <li><a href="/Admin/Add_Product">Add Products</a>
+                <li><a href="/Admin/Gallery">Gallery</a></li>
+                <li><a href="/Admin/DelProducts">Delete Products</a>
+                <li><a href="/Admin/UpdateProducts">Update Product</a></li>
+                <li><a href="/Admin/viewallproducts">ViewAllproducts</a></li>
+          </ul>
+    }
+@section Search
+{
+    <ul>
+    <li><a href="/Admin/search" class="selected">Search</a></li>
+        </ul>
+    }
+@section Sidebar
+{
+    <li class="first">Primary Office</li>
+                        <li> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></li>
+                        <li>Phone: 010-010-6600</li>
+                        <li><a href="/Admin/viewallproducts">Products</a></li>
+    }
+@section BottomSidebar
+{
+    <h3>Admin Authorities </h3>   
+                <div class="content"> 
+                	<div class="bs_box">
+                    	<a href="#"><img src="~/images/03.jpg" alt="image" /></a>
+                        <h4><a href="/Admin/Gallery">Gallery</a></h4>
+                       <div class="cleaner"></div>
+                        </div>
+                    </div>
+    }
+@section Slider
+{
+    <!DOCTYPE html>
+<body>
+    <div>
+     	  <h5><strong>Add product </strong></h5>
+      @using (Html.BeginForm("saveprod", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{        
+            <div class="content_half float_l checkout">
+           
+				Enter Product Name :  
+                  <input type="text" id="productname" name="productname" style="width:300px;"  />
+                <br />
+                <br />
+              Enter product quantity:
+				<input type="text"  id="quantity" name="quantity" style="width:300px;"  />
+                <br />
+                <br />
+              Enter product price:
+                <input type="text"  id="price" name="price" style="width:300px;"  />
+                <br />
+                <br />
+                Enter image path:
+                <input type="file" id="file" name="file"  style="width:300px;"  />
+            
+                     <input type="submit" class="submit_btn" name="submit" id="submit" value="Add product" />
+              
+                     </div>
+              
+          
+            <div class="cleaner h50"></div>
+           
+                     
+      }           
+        
+        </div> 
+      
+        <div class="cleaner"></div>
+ 
+</body>
+   
+    }
+@section Products
+{
+   
+    @*@Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts",required:false)*@
+    }
+
+@section Footer
+{
+    <p><a href="/Admin/index">Home</a> | <a href="/Admin/Add_Product">Add Products</a> | <a href="/Admin/UpdateProducts">Update Product</a>  | <a href="/Admin/DelProducts">Delete Product</a> 
+		</p>
+    }
+ 

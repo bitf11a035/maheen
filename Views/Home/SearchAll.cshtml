@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "SearchAll";
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+}
+ @section Title
+{
+  <title>Contact page</title>   
+}
+
+@section header
+{
+@*      <a href="/Cart/shoppingcart">My Cart</a> |*@
+    <a href="/Account/logout">Logout</a> 
+            <p>
+@*            	Shopping Cart: <strong> items</strong> ( <a href="/Cart/shoppingcart">Show Cart</a> )*@
+		</p>
+    }
+@section Menu
+{
+       <ul>
+                <li><a href="/Home/GoHome" class="selected">Home</a></li>
+                <li><a href="/Home/viewallproducts">Products</a></li>
+                <li><a href="/Home/about">About</a></li>
+@*                <li><a href="/Cart/checkout">Checkout</a></li>*@
+                <li><a href="/Home/contact">Contact Us</a></li>
+           
+          </ul>
+    }
+@section Search
+{
+   @* <ul>
+    <li><a href="/Home/search" class="selected">Search</a></li>
+        </ul>*@
+    }
+@section Sidebar
+{
+    <li class="first">Primary Office</li>
+                        <li> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></li>
+                        <li>Phone: 010-010-6600</li>
+@*                        <li><a href="/Cart/shoppingcart">View Cart</a></li>*@
+                        <li><a href="/Home/contact">Contact Us</a></li>
+    }
+@section BottomSidebar
+{
+                <h3>Famous Footwear </h3>   
+                <div class="content"> 
+                	<div class="bs_box">
+                    	<a href="#"><img src="~/images/02.jpg" alt="image" /></a>
+                        <h4><a href="/Home/viewallproducts">Products</a></h4>
+                       <div class="cleaner"></div>
+                    </div>
+                    </div>
+    
+    }
+@section Slider
+{
+  
+    <div id="slider" class="nivoSlider">
+                   
+                 <img src="~/images/slider/02.jpg" alt="" />
+                    <a href="#"><img src="~/images/slider/01.jpg" alt=""  /></a>
+                    <img src="~/images/slider/03.jpg" alt=""  />
+                </div>
+    }
+@section Products
+{
+  <!DOCTYPE html>
+<body>
+    <div>
+     	  <h5><strong>Products </strong></h5>
+       
+            <div class="content_half float_l checkout">
+           @foreach(var x in ViewBag.x)
+    {
+        <tr><td><img src="~/images/@x.imagepath" alt="" width="50%" height="50%"/></td>
+            <td>
+                <table style="margin-right:400px">
+         <tr><td><p>ID of shoes: </p></td><td>@x.PId</td></tr>
+          
+          <tr><td><p >Name of shoe: </p></td><td> @x.productname</td></tr>
+          <tr><td><p >Quantity: </p></td><td>@x.quantity</td></tr>
+		  
+ 		  <tr><td><p >Price: </p> </td><td>@x.price</td></tr>
+          
+      </table>
+                 
+                    </td></tr>
+    }
+ 
+                     </div>
+      
+   <div class="cleaner h50"></div>
+        
+</div> 
+    
+        <div class="cleaner"></div>
+   
+</body>   
+    @*@Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts",required:false)*@
+    }
+
+@section Footer
+{
+   <p><a href="/Home/GoHome">Home</a> | <a href="/Home/viewallproducts">Products</a> |
+        <a href="/Home/about">About</a>  |  <a href="/Home/contact">Contact Us</a>
+		</p>
+    }
+ 
+

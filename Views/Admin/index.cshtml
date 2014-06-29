@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "index";
+    Layout = "~/Views/Shared/_LayoutView.cshtml";
+
+}
+
+   @section Title
+{
+  <title>Admin Index Page</title>   
+}
+
+@section header
+{
+   <a href="/Account/logout">Logout</a> 
+    }
+@section Menu
+{
+      <ul>
+@*                <li><a href="/Admin/index" class="selected">Home</a></li>*@
+                <li><a href="/Admin/Add_Product">Add Products</a>
+                <li><a href="/Admin/Gallery">Gallery</a></li>
+               @* <li><a href="/Admin/deletegetid">Delete Products</a>*@
+                    <li><a href="/Admin/DelProducts">Delete Products</a> 
+                @*<li><a href="/Admin/updategetid">Update Product</a></li>*@
+          <li><a href="/Admin/UpdateProducts">Update Product</a></li>
+                <li><a href="/Admin/viewallproducts">ViewAllproducts</a></li>
+          </ul>
+    }
+@section Search
+{
+    <ul>
+    <li><a href="/Admin/search" class="selected">Search</a></li>
+        </ul>
+    }
+@section Sidebar
+{
+    <li class="first">Primary Office</li>
+                        <li> <a href="mailto:info@yourcompany.com">info@yourcompany.com</a></li>
+                        <li>Phone: 010-010-6600</li>
+                        <li><a href="/Admin/viewallproducts">Products</a></li>
+    }
+@section BottomSidebar
+{
+    <h3>Admin Authorities </h3>   
+                <div class="content"> 
+                	<div class="bs_box">
+                    	<a href="#"><img src="~/images/03.jpg" alt="image" /></a>
+                        <h4><a href="/Admin/Gallery">Gallery</a></h4>
+                       <div class="cleaner"></div>
+                        </div>
+                    </div>
+    }
+@section Slider
+{
+    <div id="slider" class="nivoSlider">
+                   
+                 <img src="~/images/slider/02.jpg" alt="" />
+                    <a href="#"><img src="~/images/slider/01.jpg" alt=""  /></a>
+                    <img src="~/images/slider/03.jpg" alt=""  />
+                </div>
+    }
+@section Products
+{
+    @*@Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts",required:false)*@
+    }
+
+@section Footer
+{
+    <p><a href="/Admin/index">Home</a> | <a href="/Admin/Add_Product">Add Products</a> | <a href="/Admin/UpdateProducts">Update Product</a>  | <a href="/Admin/DelProducts">Delete Product</a> 
+		</p>
+    }
